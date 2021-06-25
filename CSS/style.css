@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    background-color: rgb(120, 160, 220);
+}
+
+h1 {
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size:40px;
+	color: rgb(0, 70, 150);
+	text-shadow: 0 0 10px rgba(255 255 255 / 50%);
+}
+
+h2 {
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size:20px;
+	color:#FFF
+}
+
+h3 {
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size:20px;
+	color:rgb(0, 70, 150);
+	text-shadow: 0 0 10px rgba(255 255 255 / 50%);
+}
+
+#inicio, .fim {
+	width:350px;
+	height:200px;
+	background-color: rgba(0 70 150 / 50%);
+ 	margin-left:auto;
+    margin-right:auto;
+ 	margin-top:100px;
+	text-align:center;
+	padding:10px;
+    border-radius: 5%;
+    position: absolute;
+}
+
+
+#inicio p, .fim p {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: medium;
+	font-weight: 900;
+	text-shadow: 0 0 5px rgba(0 0 0 / 80%);
+	text-transform: uppercase;
+	color: rgb(120, 160, 220);
+}
+
+#inicio button, .fim button {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: medium;
+	text-shadow: 0 0 10px rgba(255 255 255 / 50%);	
+	background-color: #14083f;
+	text-transform: uppercase;
+	color: rgb(120, 160, 220);
+	padding: 5px;
+	border-radius: 20px;
+}
+
+.main-game {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genius {
+    display: grid;
+    grid-template-areas: "azul amarelo"
+                         "verm verde";
+    grid-gap: 1%;
+    border: 1px solid #fff;
+    background-color: #000;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    
+}
+
+#blue {
+    grid-area: azul;
+    background-color: blue;
+    border-top-left-radius: 100%;
+}
+
+#yellow {
+    grid-area: amarelo;
+    background-color: yellow;
+    border-top-right-radius: 100%;
+}
+
+#red {
+    grid-area: verm;
+    background-color: red;
+    border-bottom-left-radius: 100%;
+}
+
+#green {
+    grid-area: verde;
+    background-color: green;
+    border-bottom-right-radius: 100%;
+}
+
+.selected {
+    opacity: 0.3;
+}
+
+.blank {
+    display: none;
+    width: 0;
+    height: 0;
+}

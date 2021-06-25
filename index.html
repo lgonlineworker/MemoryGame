@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/main.js"></script>
+    
+    <title>Memory Game</title>
+</head>
+<body>
+    <div class="main-game">
+        <div id="inicio" ><h1> Memory Game </h1> <!-- div inicio !-->
+            <p><b>Siga a sequência das cores e tente ir o mais longe possível.</b></p>
+            <button onclick="playGame()"><b> Clique aqui para iniciar</b></button>
+            </div> <!-- Fim da div inicio !-->
+        <div id="genius" class="blank">
+            <div id="blue" onclick = click(3)></div>
+            <div id="yellow" onclick = click(2)></div>
+            <div id="red" onclick = click(1)></div>
+            <div id="green" onclick = click(0)></div>
+        </div>
+
+        <div id='fim' class="blank">
+            <h1> Game Over </h1><p id="finalScore"><b></b></p>
+            <button id='reinicia' onClick=playGame()><b>Jogar Novamente</b></button>
+        </div>
+    </div>
+</body>
+</html>
