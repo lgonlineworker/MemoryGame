@@ -1,17 +1,17 @@
 
 //Principais variáveis do game
-
+var $ = (id) => document.getElementById(id)
 var order = [];
 var clickedOrder = [];
 var score = 0;
-var tempo = 250;
+var tempo = 1000;
 
 //0 - verde | 1 - verm | 2 -amarelo | 3 - azul
 
-var blue = document.getElementById('blue');
-var yellow = document.getElementById('yellow');
-var red = document.getElementById('red');
-var green = document.getElementById('green');
+const blue = $('blue');
+const yellow = $('yellow');
+const red = $('red');
+const green = $('green');
 
 var mainGame = document.getElementsByClassName('main-game')
 var genius = document.getElementsByClassName('genius')
@@ -21,6 +21,7 @@ let shuffleOrder = () =>{
     let colorOrder = Math.floor(Math.random() * 4);
     order[order.length] = colorOrder;
     clickedOrder=[];
+    console.log(colorOrder);
 
     for(let i in order){
         let elementColor = createColorElement(order[i]);
@@ -32,9 +33,12 @@ let shuffleOrder = () =>{
 let lightColor = (a, b) => {
     b = b * 500;
     setTimeout(() => {
-        document.getElementById(a).classList.add('selected');
-    }, 200);
-    document.getElementById(a).classList.remove('selected');
+        $(a).classList.add('selected');
+    }, 0);
+
+    setTimeout(() => {
+        $(a).classList.remove('selected');
+    }, 1000);
     
 }
 
@@ -68,20 +72,20 @@ let click = (color) => {
 //Função retorna a cor
 let createColorElement = (color) =>{
     if(color == 0){
-        return 'green';
+        return green;
     } else if(color == 1){
-        return 'red';
+        return red;
     } else if(color == 2){
-        return 'yellow';
-    } else if (color == 4){
-        return 'blue';
+        return yellow;
+    } else if (color == 3){
+        return blue;
     }
 }
 
 //Funcão aumenta nível
 let nextLevel = () => {
     score++;
-    tempo +=2;
+    tempo -=5;
     shuffleOrder();
 }
 
@@ -90,14 +94,14 @@ let gameOver = () => {
     order = [];
     clickedOrder = [];
     document.querySelector('div.genius').classList.replace('genius', 'blank');
-    document.getElementById('fim').classList.replace('blank','fim');
-    document.getElementById('finalScore').innerHTML = "Você chegou até o level: "+ score ;
+    $('fim').classList.replace('blank','fim');
+    $('finalScore').innerHTML = "Você chegou até o level: "+ score ;
 }
 
 let playGame = () => {
     score = 0;
     tempo = 500;
-    document.getElementById('inicio').style.display = 'none';
+    $('inicio').style.display = 'none';
     
     document.querySelector('div.blank').classList.replace('blank','genius');
 
@@ -105,7 +109,7 @@ let playGame = () => {
 }
 
 //Clicks do game
-//green.onclick = () => click(0);
-//red.onclick = () => click(1);
-//yellow.onclick = () => click(2);
-//blue.onclick = () => click(3);
+green.onclick = () => {click(0)};
+red.onclick = () => {click(1)};
+yellow.onclick = () => {click(2)};
+blue.onclick = () => {click(3)};
